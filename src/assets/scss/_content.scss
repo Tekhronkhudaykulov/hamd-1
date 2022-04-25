@@ -1,0 +1,9 @@
+.barMain{
+    display: grid;
+    grid-template-columns: 1fr 1fr;;
+    background-color: #e9eadf;
+    .bar-main-bottom{
+        display: flex;
+        flex-direction: column;
+    }
+}

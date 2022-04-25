@@ -1,0 +1,45 @@
+.bar-aside-bottom{
+    margin-top: auto;
+    .bar-total{
+        width: 100%;
+        background: red;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .barTotal-img{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2px;
+            .img-1{
+                background-color: #61ae17;
+                width: 50%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a{
+                    background-color: none;
+                }
+                img{
+                    width: 45px;
+                }
+        }
+        .img-2{
+            background-color: #ff2122;
+            width: 50%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 35px;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.allLogo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left-header-name{
+        width: 60px;
+        height: 60px;
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        font-size: 28px;
+        font-weight: bold;
+    }  
+    .icon{
+        margin-right: 10px;
+    }
+}

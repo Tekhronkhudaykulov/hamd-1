@@ -1,0 +1,13 @@
+.allCategory{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70px 70px 70px 70px;
+    grid-gap: 5px;
+    .category{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #849ec8;
+        cursor: pointer;
+    }
+}

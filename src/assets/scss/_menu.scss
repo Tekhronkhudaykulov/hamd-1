@@ -1,0 +1,18 @@
+.allMenu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-rows: 100px;
+    font-weight: bold;
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #849ec8;
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+
+    }
+}

@@ -1,0 +1,20 @@
+.allFood{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    .foodName{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #849ec8;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        cursor: pointer;
+        p{
+            color: white;
+            margin: 0;
+        }
+      
+    }
+}
