@@ -12,6 +12,7 @@ const Auth = () => {
 
   const { token, loading } = useSelector((state) => state.user);
   const navigate = useNavigate();
+
   useEffect(() => {
     if (token !== null) {
       navigate("/");

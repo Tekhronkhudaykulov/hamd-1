@@ -5,6 +5,12 @@
     width: 100%;
     overflow: hidden;
     overflow-y: scroll;
+    .loading-orders{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
     .group-button{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -39,27 +45,30 @@
             }
         }
         .gamburger{
+            width: 430px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            margin-top: 10px;
             .about-food{
                 display: flex;
-                font-size: 18px;
-                font-weight: bold;
-                color: white;
-                justify-content: space-evenly;
-                width: 440px;
+                p{
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
             }
             .itog-address{
-                display: flex;
-                align-items: center;
-                width: 430px;
-                margin-left: 45px;
-                img{
-                    width: 80px;
-                    height: 80px;
-                }
                 p{
-                    color: white;
-                    font-weight: bold;
-                    font-size: 18px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
+            }
+            .price-dostavka{
+                font-size: 18px;
+                p{
+                    margin-top: 5px;
+                    margin-bottom: 5px;
                 }
             }
         }
@@ -164,6 +173,18 @@
 }
 
 .modal-finishOrders{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(200, 200, 200);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
     .finishOrders{
         width: 500px;
         display: flex;
@@ -172,6 +193,17 @@
         padding: 15px;
         border: 1px solid;
         border-radius: 5px;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 10px;
+    }    
+    .icon-close{
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
         .category-orders{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -200,10 +232,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             text-align: center;
+            height: 430px;
+            overflow: hidden;
+            overflow-y: scroll;
             p{
                 border-bottom: 1px solid black;
-                margin-top: 5px;
-                margin-bottom: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
             }
         }
         .addZakas{
@@ -227,5 +262,4 @@
                 text-align: center;
             }
         }
-    }
 }

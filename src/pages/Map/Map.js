@@ -64,6 +64,9 @@ const Map = () => {
                   <p>
                     Маршрут: <span>{curier.address}</span>
                   </p>
+                  <p>
+                    Тел: <span>{curier.phone}</span>
+                  </p>
                 </div>
               </InfoWindow>
             )}

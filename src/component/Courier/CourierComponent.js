@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../../assets/scss/_courier.scss";
 const CourierComponent = ({ onChengeSearch }) => {
   return (
     <input

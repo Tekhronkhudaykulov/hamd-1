@@ -9,7 +9,7 @@ const AllSuma = () => {
       <div className="allSumma" onClick={() => setModalOpen(true)}>
         <p>Подвердить</p>
       </div>
-      {modalOpen ? <FinishOrders /> : null}
+      {modalOpen && <FinishOrders setOpenModal={setModalOpen} />}
     </>
   );
 };
