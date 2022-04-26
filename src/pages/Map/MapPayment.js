@@ -5,22 +5,20 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 import { GoogleMap, LoadScriptNext, Marker } from "@react-google-maps/api";
 import "../../assets/scss/_orders.scss";
-import { useDispatch } from "react-redux";
-import { fetchMap } from "../../redux/actions/newOrdersActions";
-const MapPayment = () => {
+
+const MapPayment = ({ onClickMapsValue, onClickCoordinateValue }) => {
   const [address, setAddress] = useState("");
   const [coordinates, setCoordinates] = useState({ lat: 39.627, lng: 66.975 });
+
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
     const latLng = await getLatLng(results[0]);
+    onClickMapsValue(value);
+    onClickCoordinateValue(latLng);
     setAddress(value);
     setCoordinates(latLng);
   };
   const [map, setMap] = React.useState(null);
-
-  const dispatch = useDispatch();
-
-  dispatch(fetchMap({ address, coordinates }));
 
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);

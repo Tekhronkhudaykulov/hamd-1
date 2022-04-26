@@ -1,7 +1,6 @@
 const INITIAL_STATE = {
   loading: false,
   message: null,
-  mapValues: null,
 };
 
 export default (state = INITIAL_STATE, { type, payload }) => {
@@ -23,11 +22,6 @@ export default (state = INITIAL_STATE, { type, payload }) => {
         ...state,
         message: payload.message,
         loading: false,
-      };
-    case "fetch_Map":
-      return {
-        ...state,
-        mapValues: payload,
       };
     default:
       return state;

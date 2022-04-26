@@ -13,15 +13,3 @@ export const fetchNewOrders = (params) => (dispatch) => {
       dispatch({ type: "fetch_new_orders_error", payload: message });
     });
 };
-
-export const fetchMap =
-  ({ address, coordinates }) =>
-  (dispatch) => {
-    dispatch({
-      type: "fetch_Map",
-      payload: {
-        address,
-        coordinates,
-      },
-    });
-  };

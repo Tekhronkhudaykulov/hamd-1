@@ -8,15 +8,43 @@ import { PlusSquareOutlined, MinusSquareOutlined } from "@ant-design/icons";
 import MapPayment from "../Map/MapPayment";
 import AllSuma from "../../component/Orders/AllSuma";
 import { useSelector } from "react-redux";
+
 const OrderFinally = () => {
+  const [address, setAddress] = useState("");
+  const [coordinate, setCoordinate] = useState("");
+  const [value, setValue] = useState({
+    filial: "Самарканд",
+    type_order: "Доставка",
+    city: "Самарканд",
+  });
+
+  const meals = useSelector((state) => state.foods.meals_fods);
+  const products_id = meals.map((item) => item.id);
+  const products_amount = meals.map((item) => item.amount);
+  const comment = "Хорошего вам дня!";
+  const delivery_type_id = 12;
+  const productName = meals.map((item) => item.name);
+  const payment_type_id = 16;
+
   const [data, setData] = useState({});
+
   const [modal, setModal] = useState(false);
+
   const ToggleSwtich = () => {
     modal ? setModal(false) : setModal(true);
   };
+
   const handleChange = (e) => {
     setData({
       ...data,
+      address: address,
+      map_location: `${coordinate.lat}, ${coordinate.lng}`,
+      products_id: products_id,
+      products_amount: products_amount,
+      comment: comment,
+      delivery_type_id: delivery_type_id,
+      productName: productName,
+      payment_type_id: payment_type_id,
       [e.target.name]: e.target.value,
       [e.target.house]: e.target.value,
       [e.target.entrance]: e.target.value,
@@ -25,7 +53,6 @@ const OrderFinally = () => {
       [e.target.reference_point]: e.target.value,
     });
   };
-
   const handlePhone = (e) => {
     setData({ ...data, phone: e });
   };
@@ -65,10 +92,9 @@ const OrderFinally = () => {
                 <TextField
                   disabled
                   id="outlined-required"
-                  label="Самарканд"
-                  placeholder="Самарканд"
+                  label="Город"
                   name="city"
-                  value={data.strana}
+                  value={value.city}
                 />
               </div>
               <div>
@@ -78,6 +104,7 @@ const OrderFinally = () => {
                   label="Улица"
                   placeholder="Улица"
                   name="street"
+                  value={address}
                 />
               </div>
               <div>
@@ -140,20 +167,20 @@ const OrderFinally = () => {
               </div>
               <div>
                 <TextField
-                  disabled
+                  required
                   id="outlined-required"
-                  label="Филлиал "
-                  placeholder=" Самарканда"
+                  label="Филлиал"
                   name="reference_point"
+                  value={value.filial}
                 />
               </div>
               <div>
                 <TextField
-                  disabled
+                  required
                   id="outlined-required"
                   label="Тип заказа"
-                  placeholder="Доставка"
                   name="reference_point"
+                  value={value.type_order}
                 />
               </div>
               <div className="phone">
@@ -193,10 +220,18 @@ const OrderFinally = () => {
               </div>
             </div>
           </Box>
-          <MapPayment />
+          <MapPayment
+            onClickMapsValue={(onClickMapsValue) => {
+              setAddress(onClickMapsValue);
+            }}
+            onClickCoordinateValue={(onClickCoordinateValue) => {
+              setCoordinate(onClickCoordinateValue);
+              console.log(onClickCoordinateValue);
+            }}
+          />
         </div>
       </div>
-      <AllSuma />
+      <AllSuma data={data} />
     </>
   );
 };

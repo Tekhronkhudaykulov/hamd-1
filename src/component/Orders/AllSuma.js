@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import "../../assets/scss/_orders.scss";
 import FinishOrders from "./FinishOrders";
-const AllSuma = () => {
+
+const AllSuma = ({ data }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -9,7 +11,7 @@ const AllSuma = () => {
       <div className="allSumma" onClick={() => setModalOpen(true)}>
         <p>Подвердить</p>
       </div>
-      {modalOpen && <FinishOrders setOpenModal={setModalOpen} />}
+      {modalOpen && <FinishOrders data={data} setOpenModal={setModalOpen} />}
     </>
   );
 };
