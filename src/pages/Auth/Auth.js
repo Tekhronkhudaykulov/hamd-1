@@ -24,11 +24,10 @@ const Auth = () => {
   return (
     <div className="register-container">
       <p className="hamd">HAMD</p>
-      <p className="kirish">Kirish</p>
       <div className="input-register">
         <input
           type="text"
-          placeholder="Loginni kiring"
+          placeholder="Ведите логин"
           onChange={(e) => {
             setLogin(e.target.value);
           }}
@@ -37,7 +36,7 @@ const Auth = () => {
           type="text"
           name="password"
           id="password"
-          placeholder="Parolni kiriting"
+          placeholder="Ведите пароль"
           onChange={(e) => {
             setPassword(e.target.value);
           }}

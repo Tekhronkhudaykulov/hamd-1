@@ -265,11 +265,13 @@
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
-            p:nth-child(2){
+            a{
                 background-color: red;
                 padding-top: 20px;
                 padding-bottom: 20px;
                 text-align: center;
+                text-decoration: none;
+                color: white;
             }
         }
 }

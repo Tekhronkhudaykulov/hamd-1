@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import "../../assets/scss/_orders.scss";
 import FinishOrders from "./FinishOrders";
 

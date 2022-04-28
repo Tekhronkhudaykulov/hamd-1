@@ -5,12 +5,10 @@ import "../../assets/scss/_courier.scss";
 import { courierId } from "../../redux/actions/courierIdActions";
 import { fetchCouriers } from "../../redux/actions/couriersActions";
 import CourierComponent from "../../component/Courier/CourierComponent";
-import ButtonLoadingComponent from "../../element/Button/ButtonLoadingComponent";
 const Courier = () => {
   const dispatch = useDispatch();
   const [courerFilter, setCourerFilter] = useState({
-    search: "",
-    status: 2,
+    id: "",
   });
 
   useEffect(() => {
@@ -35,10 +33,10 @@ const Courier = () => {
       <div className="couriers-title">Курьеры:</div>
       <div className="search">
         <CourierComponent
-          onChengeSearch={(search) => {
+          onChengeSearch={(id) => {
             let newFilter = {
               ...courerFilter,
-              search,
+              id,
             };
             dispatch(fetchCouriers(newFilter));
             setCourerFilter(newFilter);
@@ -46,32 +44,36 @@ const Courier = () => {
         />
       </div>
       <div className="allCurier">
-        {cur.map((item, index) => (
-          <div
-            className="courier"
-            onClick={() => addCourier(item)}
-            key={item.id}
-          >
-            <img src={CourierImg} alt="" />
-            <div className="courier-info">
-              <p>
-                <span className="k">Курьер:</span>
-                {item?.courier?.name}
-              </p>
-              <p>
-                <span className="k">ID заказа:</span>#{item.id}
-              </p>
-              <p>
-                <span className="k">Маршрут:</span>
-                {item.address}
-              </p>
-              <p>
-                <span className="k">Fone:</span>
-                {item?.courier?.phone}
-              </p>
+        {cur.length > 0 ? (
+          cur.map((item, index) => (
+            <div
+              className="courier"
+              onClick={() => addCourier(item)}
+              key={item.id}
+            >
+              <img src={CourierImg} alt="" />
+              <div className="courier-info">
+                <p>
+                  <span className="k">Курьер:</span>
+                  {item?.courier?.name}
+                </p>
+                <p>
+                  <span className="k">ID заказа:</span>#{item.id}
+                </p>
+                <p>
+                  <span className="k">Маршрут:</span>
+                  {item.address}
+                </p>
+                <p>
+                  <span className="k">Тел:</span>
+                  {item?.courier?.phone}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>Такого заказа не существуеть!</p>
+        )}
       </div>
     </div>
   );

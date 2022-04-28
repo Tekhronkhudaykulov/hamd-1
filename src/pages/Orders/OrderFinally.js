@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../assets/scss/_orders.scss";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -221,12 +221,13 @@ const OrderFinally = () => {
             </div>
           </Box>
           <MapPayment
-            onClickMapsValue={(onClickMapsValue) => {
-              setAddress(onClickMapsValue);
+            onClickMapsValue={(mapsValue) => {
+              setAddress(mapsValue);
+              console.log(mapsValue);
             }}
-            onClickCoordinateValue={(onClickCoordinateValue) => {
-              setCoordinate(onClickCoordinateValue);
-              console.log(onClickCoordinateValue);
+            onClickCoordinateValue={(coordinateValue) => {
+              setCoordinate(coordinateValue);
+              console.log(coordinateValue);
             }}
           />
         </div>

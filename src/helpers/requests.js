@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const url = `${process.env.REACT_APP_API_DOMAIN}/api`;
+const url = `https://hamd.loko.uz/api`;
 
 const token = window.localStorage.getItem("@token");
 
@@ -9,7 +8,6 @@ const config = {
     Authorization: `Bearer ${token}`,
   },
 };
-
 const requests = {
   authLogin: (username) => axios.post(`${url}/operator/sign-in`, username),
   fetchCategory: () => axios.get(`${url}/operator/category?type=product`),

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Container from "./container/Container";
 import "./assets/scss/Style.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

@@ -5,7 +5,7 @@ const CourierComponent = ({ onChengeSearch }) => {
     <input
       type="text"
       className="curier_input"
-      placeholder="Kurierning idisini kiriting"
+      placeholder="Ведите id заказа"
       onChange={(e) => {
         onChengeSearch(e.target.value);
       }}

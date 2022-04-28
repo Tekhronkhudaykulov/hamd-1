@@ -3,6 +3,8 @@ import { CloseSquareOutlined } from "@ant-design/icons";
 import "../../assets/scss/_orders.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNewOrders } from "../../redux/actions/newOrdersActions";
+import { Link } from "react-router-dom";
+
 const FinishOrders = ({ setOpenModal, data }) => {
   const meals = useSelector((state) => state.foods.meals_fods);
   const initialState = 0;
@@ -36,7 +38,9 @@ const FinishOrders = ({ setOpenModal, data }) => {
           <p>
             Обшая сумма <span>{allPrice} сум</span>
           </p>
-          <p onClick={() => dispatch(fetchNewOrders(data))}>Подвердить</p>
+          <Link to="/" onClick={() => dispatch(fetchNewOrders(data))}>
+            Подвердить
+          </Link>
         </div>
       </div>
     </div>
