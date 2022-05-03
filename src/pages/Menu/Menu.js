@@ -9,9 +9,6 @@ const Menu = () => {
         <NavLink to="menuCategory">
           <div>Новый заказ</div>
         </NavLink>
-        <NavLink to="call">
-          <div>Информация о звонке </div>
-        </NavLink>
       </div>
     </>
   );

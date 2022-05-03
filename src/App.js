@@ -20,7 +20,7 @@ function App() {
               <Route path="/" element={<Menu />} />
               <Route path="/menuCategory" element={<MenuCategory />} />
               <Route path="/food/:id" element={<Food />} />
-              <Route path="/call" element={<Call />} />
+              {/* <Route path="/call" element={<Call />} /> */}
             </Route>
             <Route path="/addOrders" element={<OrderFinally />} />
           </>
