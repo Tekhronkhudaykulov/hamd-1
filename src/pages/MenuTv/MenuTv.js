@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../assets/scss/_menuTv.scss";
 import { AiOutlinePlusSquare } from "react-icons/ai";
 import { AiOutlineMinusSquare } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { foodsCountChange } from "../../redux/actions/foodsActions";
+import { AiOutlineDelete } from "react-icons/ai";
+import { deleteFood } from "../../redux/actions/foodsActions";
 
 const MenuTv = () => {
   const dispatch = useDispatch();
@@ -31,6 +33,11 @@ const MenuTv = () => {
               }
               size={25}
               color={"white"}
+            />
+            <AiOutlineDelete
+              className="iconDelete"
+              onClick={() => dispatch(deleteFood({ id: item.id }))}
+              size={25}
             />
           </div>
         </div>

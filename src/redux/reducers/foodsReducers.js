@@ -71,7 +71,11 @@ export default (state = INITIAL_STATE, { type, payload }) => {
         ...state,
         meals_fods: [],
       };
-
+    case "delete_food":
+      return {
+        ...state,
+        meals_fods: state.meals_fods.filter((item) => item.id !== payload.id),
+      };
     default:
       return state;
   }

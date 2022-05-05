@@ -47,7 +47,7 @@ const Orders = () => {
               <span></span>
             </div>
             <div className="gamburger">
-              {item.orderProducts &&
+              {[] ||
                 item.orderProducts.map((item, ind) => (
                   <div className="about-food" key={ind}>
                     <p>{item.product.name} ...</p>

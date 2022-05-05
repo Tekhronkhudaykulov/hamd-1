@@ -16,7 +16,7 @@ const Content = () => {
         <Admin />
         <Map />
         <Courier />
-        {/* <Kuxnya /> */}
+        <Kuxnya />
       </div>
       <div className="bar-main-bottom">
         <Outlet />

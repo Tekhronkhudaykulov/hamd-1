@@ -25,3 +25,8 @@ export const foodsCountChange = (product) => (dispatch) => {
 export const foodsClearOrder = () => (dispatch) => {
   dispatch({ type: "clear_order" });
 };
+
+export const deleteFood = (id) => (dispatch) => {
+  dispatch({ type: "delete_food", payload: id });
+  console.log(id, "adsadasdsa");
+};

@@ -8,7 +8,6 @@ export const fetchNewOrders = (params) => (dispatch) => {
     .fetchNewOrders(params)
     .then(({ data }) => {
       dispatch({ type: "fetch_new_orders_success", payload: data });
-      window.location.reload();
     })
     .catch(({ response }) => {
       let message = (response && response.data.message) || "Error values";

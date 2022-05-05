@@ -1,14 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "../../assets/scss/_kuxnya.scss";
+
 const Kuxnya = () => {
+  const categoryList = useSelector((state) => state.category.list);
+
   return (
     <div className="chicen">
-      <NavLink to="menuCategory">
-        <div className="kuxnya">
-          <p>Кухня</p>
-        </div>
-      </NavLink>
+      <>
+        {categoryList.map((item, index) => (
+          <NavLink key={index} to={`/food/${item.id}`}>
+            <div className="category">{item.name}</div>
+          </NavLink>
+        ))}
+      </>
     </div>
   );
 };

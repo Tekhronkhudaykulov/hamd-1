@@ -1,4 +1,8 @@
 .chicen{
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px;
     a{
         display: flex;
         align-items: center;
