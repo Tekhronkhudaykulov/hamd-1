@@ -19,7 +19,7 @@ const center = {
 
 const Map = () => {
   const [infoVisible, setInfoVisible] = useState(false);
-  const curier = useSelector((state) => state.courierId.courier);
+  const curier = useSelector((state) => state.couriers.courier);
   const [map, setMap] = React.useState(null);
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);

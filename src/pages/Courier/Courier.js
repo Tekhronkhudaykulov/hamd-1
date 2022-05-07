@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CourierImg from "../../assets/img/courier.svg";
 import "../../assets/scss/_courier.scss";
-import { courierId } from "../../redux/actions/courierIdActions";
+import { courierId } from "../../redux/actions/couriersActions";
 import { fetchCouriers } from "../../redux/actions/couriersActions";
 import CourierComponent from "../../component/Courier/CourierComponent";
 const Courier = () => {

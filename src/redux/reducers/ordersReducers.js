@@ -30,6 +30,28 @@ export default (state = INITIAL_STATE, { type, payload }) => {
         orders: payload.data,
         loading: false,
       };
+
+    // Create Order
+    case "create_order_start":
+      return {
+        ...state,
+        message: "",
+        loading: true,
+      };
+    case "create_order_error":
+      return {
+        ...state,
+        message: payload,
+        loading: false,
+      };
+    case "create_order_success":
+      // const newList = [...state.orders, payload.data && payload.data];
+      return {
+        ...state,
+        message: payload.message,
+        loading: false,
+        orders: [...state.orders, payload.data],
+      };
     default:
       return state;
   }

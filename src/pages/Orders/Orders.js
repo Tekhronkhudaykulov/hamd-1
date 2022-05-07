@@ -4,6 +4,7 @@ import { fetchOrders } from "../../redux/actions/ordersActions";
 import { useDispatch, useSelector } from "react-redux";
 import ActiveButton from "../../component/Orders/ActiveButton";
 import ButtonOrdersLoading from "../../element/Button/ButtonOrdersLoading";
+
 const Orders = () => {
   const [filter, setFilter] = useState({
     status: "",
@@ -47,14 +48,13 @@ const Orders = () => {
               <span></span>
             </div>
             <div className="gamburger">
-              {[] ||
-                item.orderProducts.map((item, ind) => (
-                  <div className="about-food" key={ind}>
-                    <p>{item.product.name} ...</p>
-                    <p>кл {item.count} ...</p>
-                    <p>{item.product.price}сум</p>
-                  </div>
-                ))}
+              {item.orderProducts.map((item, ind) => (
+                <div className="about-food" key={ind}>
+                  <p>{item?.product?.name} ...</p>
+                  <p>кл {item?.count} ...</p>
+                  <p>{item?.product?.price}сум</p>
+                </div>
+              ))}
               <div className="itog-address">
                 <p> Адресс доставки: {item.address}</p>
               </div>

@@ -4,9 +4,9 @@ import "./assets/scss/Style.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./pages/Auth/Auth";
 import MenuCategory from "./pages/Menu/MenuCategory";
-import Menu from "./pages/Menu/Menu";
 import Food from "./pages/Food/Food";
 import OrderFinally from "../src/pages/Orders/OrderFinally";
+import Menu from "../src/pages/Menu/Menu";
 const token = window.localStorage.getItem("@token");
 
 function App() {

@@ -2,8 +2,8 @@ import React from "react";
 import { CloseSquareOutlined } from "@ant-design/icons";
 import "../../assets/scss/_orders.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchNewOrders } from "../../redux/actions/newOrdersActions";
 import { Link } from "react-router-dom";
+import { fetchNewOrders } from "../../redux/actions/ordersActions";
 
 const FinishOrders = ({ setOpenModal, data }) => {
   const meals = useSelector((state) => state.foods.meals_fods);

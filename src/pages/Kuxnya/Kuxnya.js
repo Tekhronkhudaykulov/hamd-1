@@ -8,13 +8,11 @@ const Kuxnya = () => {
 
   return (
     <div className="chicen">
-      <>
-        {categoryList.map((item, index) => (
-          <NavLink key={index} to={`/food/${item.id}`}>
-            <div className="category">{item.name}</div>
-          </NavLink>
-        ))}
-      </>
+      {categoryList.map((item, index) => (
+        <NavLink key={index} to={`/food/${item.id}`}>
+          <div className="category">{item.name}</div>
+        </NavLink>
+      ))}
     </div>
   );
 };

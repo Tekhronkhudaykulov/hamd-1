@@ -41,7 +41,6 @@ const OrderFinally = () => {
       map_location: `${coordinate.lat}, ${coordinate.lng}`,
       products_id: products_id,
       products_amount: products_amount,
-      comment: comment,
       delivery_type_id: delivery_type_id,
       productName: productName,
       payment_type_id: payment_type_id,
@@ -51,6 +50,7 @@ const OrderFinally = () => {
       [e.target.floor]: e.target.value,
       [e.target.flat]: e.target.value,
       [e.target.reference_point]: e.target.value,
+      [e.target.comment]: e.target.value,
     });
   };
   const handlePhone = (e) => {
@@ -231,6 +231,16 @@ const OrderFinally = () => {
             }}
           />
         </div>
+        <textarea
+          className="textarea"
+          name="comment"
+          onChange={handleChange}
+          value={data.comment}
+          id=""
+          cols="65"
+          rows="5"
+          placeholder="Комментировайте"
+        ></textarea>
       </div>
       <AllSuma data={data} />
     </>

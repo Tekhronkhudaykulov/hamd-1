@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   message: null,
   data: {},
   userInfo: {},
+  courier: null,
 };
 
 export default (state = INITIAL_STATE, { type, payload }) => {
@@ -28,6 +29,11 @@ export default (state = INITIAL_STATE, { type, payload }) => {
         message: payload.message,
         curiers: payload.data,
         loading: false,
+      };
+    case "couriers_start":
+      return {
+        ...state,
+        courier: payload,
       };
     default:
       return state;
