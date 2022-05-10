@@ -21,7 +21,7 @@ const OrderFinally = () => {
   const meals = useSelector((state) => state.foods.meals_fods);
   const products_id = meals.map((item) => item.id);
   const products_amount = meals.map((item) => item.amount);
-  const comment = "Хорошего вам дня!";
+  // const comment = "Хорошего вам дня!";
   const delivery_type_id = 12;
   const productName = meals.map((item) => item.name);
   const payment_type_id = 16;

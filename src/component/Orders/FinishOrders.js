@@ -13,6 +13,7 @@ const FinishOrders = ({ setOpenModal, data }) => {
     initialState
   );
   const dispatch = useDispatch();
+
   return (
     <div className="modal-finishOrders">
       <div className="finishOrders">
