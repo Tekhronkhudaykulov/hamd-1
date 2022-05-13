@@ -8,6 +8,7 @@ const config = {
     Authorization: `Bearer ${token}`,
   },
 };
+
 const requests = {
   authLogin: (username) => axios.post(`${url}/operator/sign-in`, username),
   fetchCategory: () => axios.get(`${url}/operator/category?type=product`),

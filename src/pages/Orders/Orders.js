@@ -44,7 +44,7 @@ const Orders = () => {
           <div key={index} className="right-bottom-item">
             <div className="orders-p">
               <span></span>
-              <p>#{item.seq_number}</p>
+              <p>#{item.id}</p>
               <span></span>
             </div>
             <div className="gamburger">

@@ -49,8 +49,8 @@ export default (state = INITIAL_STATE, { type, payload }) => {
       return {
         ...state,
         message: payload.message,
+        orders: [...state, payload.data],
         loading: false,
-        orders: [...state.orders, payload.data],
       };
     default:
       return state;

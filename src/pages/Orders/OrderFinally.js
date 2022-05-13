@@ -21,7 +21,6 @@ const OrderFinally = () => {
   const meals = useSelector((state) => state.foods.meals_fods);
   const products_id = meals.map((item) => item.id);
   const products_amount = meals.map((item) => item.amount);
-  // const comment = "Хорошего вам дня!";
   const delivery_type_id = 12;
   const productName = meals.map((item) => item.name);
   const payment_type_id = 16;
@@ -37,20 +36,20 @@ const OrderFinally = () => {
   const handleChange = (e) => {
     setData({
       ...data,
+      [e.target.name]: e.target.value,
       address: address,
       map_location: `${coordinate.lat}, ${coordinate.lng}`,
+      [e.target.comment]: e.target.value,
+      payment_type_id: payment_type_id,
+      delivery_type_id: delivery_type_id,
       products_id: products_id,
       products_amount: products_amount,
-      delivery_type_id: delivery_type_id,
+      street: address,
       productName: productName,
-      payment_type_id: payment_type_id,
-      [e.target.name]: e.target.value,
-      [e.target.house]: e.target.value,
       [e.target.entrance]: e.target.value,
       [e.target.floor]: e.target.value,
       [e.target.flat]: e.target.value,
       [e.target.reference_point]: e.target.value,
-      [e.target.comment]: e.target.value,
     });
   };
   const handlePhone = (e) => {
@@ -107,7 +106,7 @@ const OrderFinally = () => {
                   value={address}
                 />
               </div>
-              <div>
+              {/* <div>
                 <TextField
                   required
                   id="outlined-required"
@@ -117,7 +116,7 @@ const OrderFinally = () => {
                   value={data.house}
                   onChange={handleChange}
                 />
-              </div>
+              </div> */}
               <div>
                 <TextField
                   required

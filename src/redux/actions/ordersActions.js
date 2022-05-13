@@ -3,7 +3,6 @@ import { foodsClearOrder } from "../../redux/actions/foodsActions";
 
 export const fetchOrders = (params) => (dispatch) => {
   dispatch({ type: "fetch_orders_start", payload: params });
-
   requests
     .fetchOrders(params)
     .then(({ data }) => {

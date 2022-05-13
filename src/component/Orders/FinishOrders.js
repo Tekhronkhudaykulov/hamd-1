@@ -1,8 +1,8 @@
 import React from "react";
+import axios from "axios";
 import { CloseSquareOutlined } from "@ant-design/icons";
 import "../../assets/scss/_orders.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { fetchNewOrders } from "../../redux/actions/ordersActions";
 
 const FinishOrders = ({ setOpenModal, data }) => {
@@ -13,7 +13,6 @@ const FinishOrders = ({ setOpenModal, data }) => {
     initialState
   );
   const dispatch = useDispatch();
-
   return (
     <div className="modal-finishOrders">
       <div className="finishOrders">
@@ -39,9 +38,9 @@ const FinishOrders = ({ setOpenModal, data }) => {
           <p>
             Обшая сумма <span>{allPrice} сум</span>
           </p>
-          <Link to="/" onClick={() => dispatch(fetchNewOrders(data))}>
+          <button onClick={() => dispatch(fetchNewOrders(data))}>
             Подвердить
-          </Link>
+          </button>
         </div>
       </div>
     </div>
