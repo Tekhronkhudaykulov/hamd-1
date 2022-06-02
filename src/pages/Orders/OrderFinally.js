@@ -187,6 +187,7 @@ const OrderFinally = () => {
                   country={"uz"}
                   name="phone"
                   defaultMask={"(..) ...-..-.."}
+                  placeholder="+998"
                   alwaysDefaultMask={true}
                   onChange={handlePhone}
                   value={data.phone}

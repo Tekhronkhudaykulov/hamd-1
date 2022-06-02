@@ -17,6 +17,5 @@ const requests = {
     axios.get(`${url}/operator/couriers-way`, { params, ...config }),
   fetchOrders: (params) =>
     axios.get(`${url}/operator/orders`, { params, ...config }),
-  fetchNewOrders: (params) => axios.post(`${url}/operator/order-new`, params),
 };
 export default requests;

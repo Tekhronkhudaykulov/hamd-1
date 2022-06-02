@@ -1,12 +1,7 @@
 const INITIAL_STATE = {
-  curiers: [],
   orders: [],
-  list: [],
   loading: false,
-  token: null,
   message: null,
-  data: {},
-  userInfo: {},
 };
 
 export default (state = INITIAL_STATE, { type, payload }) => {
@@ -32,26 +27,26 @@ export default (state = INITIAL_STATE, { type, payload }) => {
       };
 
     // Create Order
-    case "create_order_start":
-      return {
-        ...state,
-        message: "",
-        loading: true,
-      };
-    case "create_order_error":
-      return {
-        ...state,
-        message: payload,
-        loading: false,
-      };
-    case "create_order_success":
-      // const newList = [...state.orders, payload.data && payload.data];
-      return {
-        ...state,
-        message: payload.message,
-        orders: [...state, payload.data],
-        loading: false,
-      };
+    // case "create_order_start":
+    //   return {
+    //     ...state,
+    //     message: "",
+    //     loading: true,
+    //   };
+    // case "create_order_error":
+    //   return {
+    //     ...state,
+    //     message: payload,
+    //     loading: false,
+    //   };
+    // case "create_order_success":
+    //   // const newList = [...state.orders, payload.data && payload.data];
+    //   return {
+    //     ...state,
+    //     message: payload.message,
+    //     orders: [...state, payload.data],
+    //     loading: false,
+    //   };
     default:
       return state;
   }

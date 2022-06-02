@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
 import { GoogleMap, LoadScriptNext, Marker } from "@react-google-maps/api";
 import "../../assets/scss/_orders.scss";
+import { geocodeByPlaceId } from "react-places-autocomplete";
 
 const MapPayment = ({ onClickMapsValue, onClickCoordinateValue }) => {
   const [address, setAddress] = useState("");
   const [coordinates, setCoordinates] = useState({ lat: 39.627, lng: 66.975 });
 
-  const handleSelect = async (value) => {
-    const results = await geocodeByAddress(value);
+  useEffect(() => {
+    console.log("====================================");
+    console.log(address);
+    console.log("====================================");
+  }, [address]);
+
+  const handleSelect = async (value, placeId, suggestion) => {
+    // const results = await geocodeByAddress(value);
+    const results = await geocodeByPlaceId(placeId);
     const latLng = await getLatLng(results[0]);
     onClickMapsValue(value);
     onClickCoordinateValue(latLng);
@@ -37,31 +45,38 @@ const MapPayment = ({ onClickMapsValue, onClickCoordinateValue }) => {
         onChange={setAddress}
         onSelect={handleSelect}
       >
-        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
-            <div className="input-autocomplete">
-              <input
-                className="inputProps"
-                {...getInputProps({ placeholder: "Ведите адрес клиента" })}
-              />
-            </div>
+        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => {
+          return (
             <div>
-              {loading ? <div>...loading</div> : null}
+              <div className="input-autocomplete">
+                <input
+                  className="inputProps"
+                  {...getInputProps({ placeholder: "Ведите адрес клиента" })}
+                />
+              </div>
+              <div>
+                {loading ? <div>...loading</div> : null}
 
-              {suggestions.map((suggestion) => {
-                const style = {
-                  backgroundColor: suggestion.active ? "#41b6e6" : "#fff",
-                };
-
-                return (
-                  <div {...getSuggestionItemProps(suggestion, { style })}>
-                    {suggestion.description}
-                  </div>
-                );
-              })}
+                {suggestions
+                  .filter(
+                    (sugg) =>
+                      sugg.formattedSuggestion.secondaryText.includes("Уз") ||
+                      sugg.formattedSuggestion.secondaryText.includes("Uzb")
+                  )
+                  .map((suggestion) => {
+                    const style = {
+                      backgroundColor: suggestion.active ? "#41b6e6" : "#fff",
+                    };
+                    return (
+                      <div {...getSuggestionItemProps(suggestion, { style })}>
+                        {suggestion.description}
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
-          </div>
-        )}
+          );
+        }}
       </PlacesAutocomplete>
       <LoadScriptNext googleMapsApiKey={apikey}>
         <GoogleMap
